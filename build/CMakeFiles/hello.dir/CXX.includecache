@@ -6,3 +6,17 @@
 
 #IncludeRegexTransform: 
 
+../include/Blah.h
+
+D:/code/cmake/main.cpp
+iostream
+-
+Blah.h
+D:/code/cmake/Blah.h
+
+D:/code/cmake/src/blah.cpp
+Blah.h
+D:/code/cmake/src/Blah.h
+iostream
+-
+

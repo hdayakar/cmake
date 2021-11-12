@@ -47,10 +47,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\code\cmake-basics
+CMAKE_SOURCE_DIR = D:\code\cmake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\code\cmake-basics\build
+CMAKE_BINARY_DIR = D:\code\cmake\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\code\cmake-basics\build\CMakeFiles D:\code\cmake-basics\build\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\code\cmake\build\CMakeFiles D:\code\cmake\build\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\code\cmake-basics\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\code\cmake\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -149,6 +149,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\hello.dir\build.make CMakeFiles/hello.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/blah.obj: src/blah.cpp.obj
+
+.PHONY : src/blah.obj
+
+# target to build an object file
+src/blah.cpp.obj:
+	$(MAKE) -f CMakeFiles\hello.dir\build.make CMakeFiles/hello.dir/src/blah.cpp.obj
+.PHONY : src/blah.cpp.obj
+
+src/blah.i: src/blah.cpp.i
+
+.PHONY : src/blah.i
+
+# target to preprocess a source file
+src/blah.cpp.i:
+	$(MAKE) -f CMakeFiles\hello.dir\build.make CMakeFiles/hello.dir/src/blah.cpp.i
+.PHONY : src/blah.cpp.i
+
+src/blah.s: src/blah.cpp.s
+
+.PHONY : src/blah.s
+
+# target to generate assembly for a file
+src/blah.cpp.s:
+	$(MAKE) -f CMakeFiles\hello.dir\build.make CMakeFiles/hello.dir/src/blah.cpp.s
+.PHONY : src/blah.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -161,6 +188,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... src/blah.obj
+	@echo ... src/blah.i
+	@echo ... src/blah.s
 .PHONY : help
 
 
